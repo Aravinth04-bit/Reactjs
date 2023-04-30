@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+      .chartbox{
+        width: 300px;
+        height: 300px;
+      }
+      .grid{
+        display: grid;
+        gap: 10px;
+      }
+      .one{
+          padding: 30px;
+          background-color: red;
+          grid-column: 1 / span 3;
+           grid-row: 1;
+      }
+      .two{
+        padding: 30px;
+          background-color: yellow;
+          grid-column: 2 / span 2;
+           grid-row: 1;
+      }
+      .three{
+        padding: 30px;
+          background-color: pink;
+          grid-column: 3 /span 2;
+           grid-row: 1/span 2;
+      }
+      .four{
+        padding: 30px;
+          background-color: black;
+          grid-column: 1 / span 2;
+           grid-row: 2;
+      }
+  </style>
+</head>
+<body>
+  <div class="chartbox">
+    <canvas id="chart1"></canvas>
+  </div>
+  <div class="grid">
+       <div class="one">1</div>
+       <div class="two">2</div>
+       <div class="three">3</div>
+       <div class="four">2</div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-stacked100@1.0.0"></script>
+  <script>
+    Chart.register(ChartjsPluginStacked100.default);
+
+    const ctx = document.getElementById('chart1').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label:"efhry",
+            data: [12, 29, 7, 5, 6],
+            backgroundColor: [
+                '#ff9f43d9'
+            ],
+            borderWidth: 0,
+            borderRadius:10,
+            borderSkipped:false,
+            barPercentage:0.3
+        },{
+            label: '# of Votes',
+            data: [20, 19, 7, 15, 6],
+            backgroundColor: [
+                '#F3F3F3'
+            ],
+            borderWidth: 1,
+            borderRadius:20,
+            barPercentage:0.3
+        }]
+    },
+    options: {
+      plugins:{
+           tooltip:{
+              displayColors:false
+           },
+           legend:{
+            display:false
+           },
+           stacked100:{
+            enable:true
+           }
+      },
+        scales: {
+            y: {
+                beginAtZero: true,
+                border:false,
+                ticks:{
+                     display:false
+                },
+                grid:{
+                  display:false,
+                  drawBorder:false
+                }
+            },
+            x:{
+                grid:{
+                  display:false,
+                  drawBorder:false
+                },
+                ticks:{
+                     display:false
+                },
+            }
+        }
+    }
+});
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+npx install -g create-react-app
+
+
+https://goprotemplate.com/work/01_product/index.html?i=85201&aff=entheos#contact
+
+
+https://goprotemplate.com/work/01_product/index.html
